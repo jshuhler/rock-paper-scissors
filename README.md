@@ -19,4 +19,23 @@ Making a Rock/Paper/Scissors game in the console while working through [The Odin
 ## playRound
 - Need to take humanChoice and computerChoice and compare them
     - Don't want to hardcode all the possibilities, need to figure out how to let the code look if one player played Rock and the other played Scissors, and then assign the point to the player who played Rock. Rather than having something that just is `IF humanChoice === Rock && computerChoice === Scissors, THEN count up humanScore`
-    - ~~[switch statements are for this](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Conditionals#switch_statements)~~ no, they're not. they're just for one input, not two like I'm using here.
+    - ~~[switch statements are for this](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Conditionals#switch_statements)~~ no they're not. they're just for one input, not two like I'm using here.
+## playGame
+### hint
+- When you assign a function call to a variable, the return value of that function is assigned to the variable. Accessing the variable afterward will only provide the assigned value; it doesn’t recall the function. You need to recall the choice functions to get new choices for each round.
+- Re-work your previous functions or create more helper functions if necessary. Specifically, you may want to change the return values to something more useful.
+-------------
+- the hint is saying that when you use something like `humanChoice = getHumanChoice();` the value of the function `getHumanChoice` is assigned to the variable `humanChoice`. if I were to call that variable again later it just gives me the value assigned to the variable, it doesn't call the function again. 
+- so...I need to figure out a way to call the function over and over. in this case, I'd need to call `getHumanCHoice` and `getComputerChoice` a bunch I think?
+
+### Pseudocode
+- run one round
+- update scores
+- keeping updated scores, run another round
+- update scores
+- keeping updated scores, run another round
+- update scores
+- keeping updated scores, run another round
+- update scores
+- keeping updated scores, run another round
+- update scores

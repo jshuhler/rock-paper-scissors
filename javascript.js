@@ -23,7 +23,12 @@ function getHumanChoice () {
 let humanScore = 0;
 let computerScore = 0;
 
-// =======PLAYING ONE ROUND=======
+//=======PLAYING THE GAME=======
+function playGame() {
+//I have no idea what to put here.
+
+
+//PLAYING ONE ROUND
 function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanChoice();
     computerChoice = getComputerChoice();
@@ -55,10 +60,12 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
         console.log("Scissors match Scissors, you tie this round!");
 }
-//I think I will want to remove this from this function once playGame is created and it should live in there.
+
 console.log(`You: ${humanScore}`);
 console.log(`Computer: ${computerScore}`);
 }
+}
+
 //=======CONSOLE DEBUGGING AND TESTING=======
 console.log("++++SCOREBOARD++++");
 // console.log(`Comp: ${getComputerChoice()}`);
