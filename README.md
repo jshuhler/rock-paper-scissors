@@ -19,4 +19,4 @@ Making a Rock/Paper/Scissors game in the console while working through [The Odin
 ## playRound
 - Need to take humanChoice and computerChoice and compare them
     - Don't want to hardcode all the possibilities, need to figure out how to let the code look if one player played Rock and the other played Scissors, and then assign the point to the player who played Rock. Rather than having something that just is `IF humanChoice === Rock && computerChoice === Scissors, THEN count up humanScore`
-    
+    - ~~[switch statements are for this](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Conditionals#switch_statements)~~ no, they're not. they're just for one input, not two like I'm using here.
