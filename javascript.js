@@ -4,19 +4,31 @@
 // =======COMPUTER CHOICE=======
 function getComputerChoice() {
     let compNum = Math.floor(Math.random() * 3);
-    return compNum;
+    let compResult = 
+        (compNum === 0) ? 'Rock' :
+        (compNum === 1) ? 'Paper' :
+        (compNum === 2) ? 'Scissors' :
+        'Gun';
 
-    
-    
-    // if (compNum === 0) {
-    //      let getComputerChoice = "Rock";
-    // } else if (compNum === 1) { 
-    //     getComputerChoice = "Paper";
-    // } else if (compNum === 2) {
-    //     getComputerChoice = "Scissors";
-    // } else {
-    //     compNum = "";
-    // }
-    }
+    return compResult; 
+}
 
-console.log(getComputerChoice());
+function getHumanChoice () {
+    let playerChoice = prompt("Rock, Paper, or Scissors?");
+    return playerChoice;
+}
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+//=======CONSOLE DEBUGGING AND TESTING=======
+// console.log(`DEBUGGING: ${getComputerChoice()}`);
+// console.log(`DEBUGGING: ${getHumanChoice()}`);
+// console.log(humanScore);
