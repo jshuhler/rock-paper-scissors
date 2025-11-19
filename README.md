@@ -39,3 +39,5 @@ Making a Rock/Paper/Scissors game in the console while working through [The Odin
 - update scores
 - keeping updated scores, run another round
 - update scores
+
+- https://discord.com/channels/505093832157691914/690590001486102589/1440463997160914974

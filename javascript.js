@@ -25,8 +25,27 @@ let computerScore = 0;
 
 //=======PLAYING THE GAME=======
 function playGame() {
-//I have no idea what to put here.
+    function playRoundOne() {
+        return playRound();
+    }
+    function playRoundTwo() {
+        return playRound();
+    }
+    function playRoundThree() {
+        return playRound();
+    }
+    function playRoundFour() {
+        return playRound();
+    }
+    function playRoundFive() {
+        return playRound();
+    }
 
+playRoundOne();
+playRoundTwo();
+playRoundThree();
+playRoundFour();
+playRoundFive();
 
 //PLAYING ONE ROUND
 function playRound(humanChoice, computerChoice) {
@@ -64,6 +83,14 @@ function playRound(humanChoice, computerChoice) {
 console.log(`You: ${humanScore}`);
 console.log(`Computer: ${computerScore}`);
 }
+
+    if (humanScore > computerScore) {
+        console.log(`Congratulations! You've won ${humanScore}-${computerScore}.`);
+    } else if (humanScore < computerScore) {
+        console.log(`Oh no! You've lost this round ${computerScore}-${humanScore}.`);
+    } else if (humanScore === computerScore) {
+        console.log(`So close! You've tied this round ${humanScore}-${computerScore}.`)
+    }
 }
 
 //=======CONSOLE DEBUGGING AND TESTING=======
@@ -72,4 +99,4 @@ console.log("++++SCOREBOARD++++");
 // console.log(`Human: ${getHumanChoice()}`);
 // console.log(humanScore);
 // console.log(computerScore);
-console.log(playRound());
+console.log(playGame());
