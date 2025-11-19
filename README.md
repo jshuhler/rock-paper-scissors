@@ -1,6 +1,8 @@
 # rock-paper-scissors
 Making a Rock/Paper/Scissors game in the console while working through [The Odin Project's](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors) HTML/CSS/JavaScript Foundations course.
 
+I'm using this README as a scratch pad for myself.
+
 # Plan
 ## getComputerChoice
 - Need to use `Math.random()` to generate a number between 0 and 1. 
