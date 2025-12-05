@@ -43,3 +43,26 @@ I'm using this README as a scratch pad for myself.
 - update scores
 
 - https://discord.com/channels/505093832157691914/690590001486102589/1440463997160914974
+
+# UI Updates
+- build out the HTML
+    - icon images
+        - https://thenounproject.com/creator/moniruzzamanbd187/
+    - find out hwo to make images buttons?
+- style the HTML basics
+- start working through updating functions following instructions
+    - stuff
+    - stuff
+    - more stuff
+    - don't want it to run 5 rounds, want it to end after one player gets 5 points
+
+## Updating playRound function
+- remove the console.log
+- move the updating score line up one
+- under the updating score, append a change to the divs created above for the scoreboard
+
+## Open Questions
+- how to stop the game when one score = 5
+
+## Where I left off
+- 12/5: working on updating the playRound function (see above)
