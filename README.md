@@ -59,10 +59,20 @@ I'm using this README as a scratch pad for myself.
 ## Updating playRound function
 - remove the console.log
 - move the updating score line up one
-- under the updating score, append a change to the divs created above for the scoreboard
+- under the updating score, append a change to the divs created above for the scoreboard (the divs aren't being created correctly yet)
 
 ## Open Questions
 - how to stop the game when one score = 5
 
 ## Where I left off
 - 12/5: working on updating the playRound function (see above)
+
+## What I need the updated playRound function to do
+-X when a button is clicked, it runs the function
+-X create the div that will display the results (round by round result [ie - you won, lost, or tied this round], not the running score total)
+-X check the button selected (humanChoice) vs the computerChoice that gets run on button click
+    - runs through the if statements in playRound
+    - update the div created above to reflect the outcome of the round
+    - append the update to the div created above to hold theround by round results
+-X clear the roundResultsDiv when any button is clicked again
+-X 

@@ -12,13 +12,7 @@ function getComputerChoice() {
     return computerChoice; 
 }
 
-// =======HUMAN CHOICE=======
-// function getHumanChoice () {
-//     let userInput = prompt("Rock, Paper, or Scissors?");
-//     let humanChoice = userInput.toLowerCase();
-//     return humanChoice;
-// }
-
+// =======HUMAN CHOICE AND PLAYING THE ROUND=======
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
@@ -45,9 +39,7 @@ scissorsBtn.addEventListener('click',() => {
 })
 
 // =======CREATING RESULTS DIV=======
-const results = document.createElement("div");
-const roundResult = document.createElement("roundResult")
-const 
+// I moved all of this into the actual playRound fuunction, I think it needs to be in that or it was trying to read a null value for content
 
 // =======INITIAL SCORING=======
 let humanScore = 0;
@@ -77,51 +69,83 @@ let computerScore = 0;
 // playRoundFour();
 // playRoundFive();
 
-//PLAYING ONE ROUND
+//=======PLAYING ONE ROUND=======
 function playRound(humanChoice, computerChoice) {
-    // humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice();
+
+    const main = document.querySelector(".main");
+
+    let roundResults = document.createElement("roundResultsDiv");
+    roundResults.style.display = 'flex';
+    let scoreboard = document.createElement("scoreboard");
+    scoreboard.style.display = 'flex';
+    
     //ROCK OPTIONS
     if (humanChoice === "rock" && computerChoice === "rock") {
-        console.log("Rock matches Rock, you tie this round!");
+        roundResults.textContent = "Rock matches Rock, you tie this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "paper") {
-        console.log("Paper beats Rock, you lose this round!");
         computerScore++;
+        roundResults.textContent = "Paper beats Rock, you lose this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("Rock beats Scissors, you win this round!");
         humanScore++;
+        roundResults.textContent = "Rock beats Scissors, you win this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
     //PAPER OPTIONS
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("Paper beats Rock, you win this round!");
         humanScore++;
+        roundResults.textContent = "Paper beats Rock, you win this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "paper") {
-        console.log("Paper matches Paper, you tie this round!");
+        roundResults.textContent = "Paper matches Paper, you tie this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        console.log("Scissors beat Paper, you lose this round!");
         computerScore++;
+        roundResults.textContent = "Scissors beat Paper, you lose this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
     //SCISSORS OPTIONS
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log("Rock beats scissors, you lose this round!");
         computerScore++;
+        roundResults.textContent = "Rock beats Scissors, you lose this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("Scissors beat Paper, you win this round!");
         humanScore++;
+        roundResults.textContent = "Scissors beat Paper, you win this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
-        console.log("Scissors match Scissors, you tie this round!");
+        roundResults.textContent = "Scissors match Scissors, you tie this round!";
+        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
 }
+main.appendChild(scoreboard);
+main.appendChild(roundResults);
+
+rockBtn.addEventListener('click', () => {
+    roundResults.remove();
+    scoreboard.remove();
+})
+
+paperBtn.addEventListener('click', () => {
+    roundResults.remove();
+    scoreboard.remove();
+})
+
+scissorsBtn.addEventListener('click', () => {
+    roundResults.remove();
+    scoreboard.remove();
+})
 
 console.log(`You: ${humanScore}`);
 console.log(`Computer: ${computerScore}`);
 }
 
-    if (humanScore > computerScore) {
-        console.log(`Congratulations! You've won ${humanScore}-${computerScore}.`);
-    } else if (humanScore < computerScore) {
-        console.log(`Oh no! You've lost this round ${computerScore}-${humanScore}.`);
-    } else if (humanScore === computerScore) {
-        console.log(`So close! You've tied this round ${humanScore}-${computerScore}.`)
-    }
-// }
+//     if (humanScore > computerScore) {
+//         console.log(`Congratulations! You've won ${humanScore}-${computerScore}.`);
+//     } else if (humanScore < computerScore) {
+//         console.log(`Oh no! You've lost this round ${computerScore}-${humanScore}.`);
+//     } else if (humanScore === computerScore) {
+//         console.log(`So close! You've tied this round ${humanScore}-${computerScore}.`)
+//     }
+// // }
 
 //=======CONSOLE DEBUGGING AND TESTING=======
 console.log("++++SCOREBOARD++++");
@@ -129,4 +153,4 @@ console.log("++++SCOREBOARD++++");
 // console.log(`Human: ${getHumanChoice()}`);
 // console.log(humanScore);
 // console.log(computerScore);
-console.log(playGame());
+// console.log(playGame());

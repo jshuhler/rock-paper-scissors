@@ -48,6 +48,13 @@ a:hover {
     margin: 30px 0px;
 }
 
+/* =====Main===== */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* =====Buttons===== */
 .buttons {
     display: flex;
