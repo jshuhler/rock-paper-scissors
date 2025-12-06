@@ -75,4 +75,20 @@ I'm using this README as a scratch pad for myself.
     - update the div created above to reflect the outcome of the round
     - append the update to the div created above to hold theround by round results
 -X clear the roundResultsDiv when any button is clicked again
--X 
+
+## next steps
+- either update playRound or create a new function that kicks when either (humanScore === 5 || computerScore === 5)
+    - i wonder if i could do something with a for loop for this.................
+- what needs to happen when either score === 5
+    - clear everything in `main`, including the rock paper scissors buttons
+    - add either a winner or loser message
+    - add a button to start a new game
+- what needs to happen when new game button is pressed
+    - return humanScore and computerScore to 0
+    - return the rock paper scissors buttons
+    - remove the winner/loser message and the new game button
+
+## style updates to make
+- add image to buttons
+-correct spacing in `main` - the buttons should be alone in the top 1/3rd of the section, the scoring updates should be in the bottom 2/3rds (?)
+- make the scoreboard look nicer

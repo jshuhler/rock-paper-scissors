@@ -82,39 +82,39 @@ function playRound(humanChoice, computerChoice) {
     //ROCK OPTIONS
     if (humanChoice === "rock" && computerChoice === "rock") {
         roundResults.textContent = "Rock matches Rock, you tie this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "paper") {
         computerScore++;
         roundResults.textContent = "Paper beats Rock, you lose this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
         humanScore++;
         roundResults.textContent = "Rock beats Scissors, you win this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     //PAPER OPTIONS
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         humanScore++;
         roundResults.textContent = "Paper beats Rock, you win this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "paper") {
         roundResults.textContent = "Paper matches Paper, you tie this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
         computerScore++;
         roundResults.textContent = "Scissors beat Paper, you lose this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     //SCISSORS OPTIONS
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
         computerScore++;
         roundResults.textContent = "Rock beats Scissors, you lose this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         humanScore++;
         roundResults.textContent = "Scissors beat Paper, you win this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
         roundResults.textContent = "Scissors match Scissors, you tie this round!";
-        scoreboard.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
+        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
 }
 main.appendChild(scoreboard);
 main.appendChild(roundResults);
