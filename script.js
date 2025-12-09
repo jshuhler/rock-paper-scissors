@@ -12,7 +12,7 @@ function getComputerChoice() {
     return computerChoice; 
 }
 
-// =======HUMAN CHOICE AND PLAYING THE ROUND=======
+// =======HUMAN CHOICE=======
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
@@ -45,7 +45,6 @@ let roundCount = 0;
 
 // =======DEFINING & CREATING ELEMENTS=======
 const main = document.querySelector(".main");
-const body = document.querySelector(".body");
 
 let roundCounter = document.createElement("roundCountDiv");
 roundCounter.style.display = 'flex';
@@ -62,6 +61,8 @@ winnerMsg.style.textAlign = 'center';
 
 let restartBtn = document.createElement("button");
 restartBtn.textContent = "Play Again";
+restartBtn.style.padding = '8px 16px';
+restartBtn.style.fontSize = '16px';
 
 // =======PLAYING GAME FUNCTIONS=======
 function playRound(humanChoice, computerChoice) {
@@ -69,60 +70,61 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "rock") {
         roundCount++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Rock matches Rock, you tie this round!";
+        roundResults.textContent = "Both Rocks crack into each other. You tie this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "paper") {
         roundCount++;
         computerScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Paper beats Rock, you lose this round!";
+        roundResults.textContent = "The Computer's Paper smothers your Rock. You lose this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
         roundCount++;
         humanScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Rock beats Scissors, you win this round!";
+        roundResults.textContent = "Your Rock smashes the Computer's Scissors. You win this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     
-        //PAPER OPTIONS
+    //PAPER OPTIONS
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         roundCount++;
         humanScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Paper beats Rock, you win this round!";
+        roundResults.textContent = "Your Paper smothers the Computer's Rock. You win this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "paper") {
         roundCount++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Paper matches Paper, you tie this round!";
+        roundResults.textContent = "Both pieces of Paper just kind of lay there. You tie this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
         roundCount++;
         computerScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Scissors beat Paper, you lose this round!";
+        roundResults.textContent = "The Computer's Scissors shred your Paper. You lose this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     
-        //SCISSORS OPTIONS
+    //SCISSORS OPTIONS
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
         roundCount++;
         computerScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Rock beats Scissors, you lose this round!";
+        roundResults.textContent = "The Computer's Rock smashes your Scissors. You lose this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         roundCount++;
         humanScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Scissors beat Paper, you win this round!";
+        roundResults.textContent = "Your Scissors shred the Computer's Paper. You win this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
         roundCount++;
         roundCounter.textContent = `Round: ${roundCount}`;
-        roundResults.textContent = "Scissors match Scissors, you tie this round!";
+        roundResults.textContent = "Sparks fly as both Scissors clash. You tie this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     }    
 
+    //CHECKING FOR A WINNER
     if (humanScore === 5 || computerScore === 5) {
         resolveGame();
     } else {
@@ -131,7 +133,7 @@ function playRound(humanChoice, computerChoice) {
         main.appendChild(roundResults);
     };
 
-    // FOR TESTING
+    //FOR TESTING PURPOSES
     console.log(`roundCount: ${roundCount}`);
     console.log(`humanScore: ${humanScore}`);
     console.log(`computerScore: ${computerScore}`);
@@ -148,7 +150,7 @@ function resolveGame() {
     if (humanScore === 5) {
         winnerMsg.textContent = `Congratulations! You've won ${humanScore}-${computerScore} after ${roundCount} rounds!`;
     } else if (computerScore === 5) {
-        winnerMsg.textContent = `Oh no! You've lost ${computerScore}-${humanScore} in ${roundCount} rounds. Better luck next time!`;
+        winnerMsg.textContent = `Oh no! You've lost ${computerScore}-${humanScore} after ${roundCount} rounds. Better luck next time!`;
     }
     main.appendChild(winnerMsg);
     main.appendChild(restartBtn);

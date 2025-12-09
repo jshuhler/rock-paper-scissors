@@ -101,3 +101,8 @@ I'm using this README as a scratch pad for myself.
     - it's because the if statement that the appendChild methods are in is not part of the if loop for determining the winner of each contest between the players, need to figure out how to get that to run each time. another function?
 ### Still need to figure out:
 - How to return to the original page when the Play Again button is clicked - is there a method to remove everything and go back to the original DOM tree? Look into that 
+
+Rock - <a href="https://www.flaticon.com/free-icons/rock" title="rock icons">Rock icons created by Freepik - Flaticon</a>
+Paper - <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Freepik - Flaticon</a>
+Scissors - <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Gulraiz - Flaticon</a>
+Scissors 2 - <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Freepik - Flaticon</a>

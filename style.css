@@ -12,11 +12,9 @@ body {
 
 button {
     cursor: pointer;
-    padding: 8px 16px;
+    padding: 8px 13px;
     border-radius: 8px;
     font-family: "JetBrains Mono", monospace;
-    /* transform: translateY(-1px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); */
 }
 
 a {
@@ -57,11 +55,18 @@ a:hover {
     gap: 30px;
 }
 
-/* =====Buttons===== */
-.buttons {
+/* =====Game Buttons===== */
+.buttons-main {
     display: flex;
     justify-content: center;
     gap: 40px;
+    width: 120px;
+    height: 120px;
+}
+
+img {
+    width: 90px;
+    height: 90px;
 }
 
 /* =====Footer===== */
