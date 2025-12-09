@@ -38,47 +38,28 @@ scissorsBtn.addEventListener('click',() => {
     return playRound;
 })
 
-// =======CREATING RESULTS DIV=======
-// I moved all of this into the actual playRound fuunction, I think it needs to be in that or it was trying to read a null value for content
-
 // =======INITIAL SCORING=======
 let humanScore = 0;
 let computerScore = 0;
 
-//=======PLAYING THE GAME=======
-// function playGame() {
-//     function playRoundOne() {
-//         return playRound();
-//     }
-//     function playRoundTwo() {
-//         return playRound();
-//     }
-//     function playRoundThree() {
-//         return playRound();
-//     }
-//     function playRoundFour() {
-//         return playRound();
-//     }
-//     function playRoundFive() {
-//         return playRound();
-//     }
+// =======DEFINING & CREATING ELEMENTS=======
+const main = document.querySelector(".main");
 
-// playRoundOne();
-// playRoundTwo();
-// playRoundThree();
-// playRoundFour();
-// playRoundFive();
+let roundResults = document.createElement("roundResultsDiv");
+roundResults.style.display = 'flex';
 
-//=======PLAYING ONE ROUND=======
+let scoreboard = document.createElement("scoreboard");
+scoreboard.style.display = 'flex';
+
+let winnerMsg = document.createElement("winnerMsg");
+winnerMsg.style.display = 'flex';
+winnerMsg.style.textAlign = 'center';
+
+let restartBtn = document.createElement("button");
+restartBtn.textContent = "Play Again";
+
+// =======PLAYING A ROUND=======
 function playRound(humanChoice, computerChoice) {
-
-    const main = document.querySelector(".main");
-
-    let roundResults = document.createElement("roundResultsDiv");
-    roundResults.style.display = 'flex';
-    let scoreboard = document.createElement("scoreboard");
-    scoreboard.style.display = 'flex';
-    
     //ROCK OPTIONS
     if (humanChoice === "rock" && computerChoice === "rock") {
         roundResults.textContent = "Rock matches Rock, you tie this round!";
@@ -91,7 +72,8 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         roundResults.textContent = "Rock beats Scissors, you win this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
-    //PAPER OPTIONS
+    
+        //PAPER OPTIONS
     } else if (humanChoice === "paper" && computerChoice === "rock") {
         humanScore++;
         roundResults.textContent = "Paper beats Rock, you win this round!";
@@ -103,7 +85,8 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
         roundResults.textContent = "Scissors beat Paper, you lose this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
-    //SCISSORS OPTIONS
+    
+        //SCISSORS OPTIONS
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
         computerScore++;
         roundResults.textContent = "Rock beats Scissors, you lose this round!";
@@ -115,27 +98,37 @@ function playRound(humanChoice, computerChoice) {
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
         roundResults.textContent = "Scissors match Scissors, you tie this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+    }    
+
+    if (humanScore === 5 || computerScore === 5) {
+        resolveGame();
+    } else {
+        main.appendChild(scoreboard);
+        main.appendChild(roundResults);
+    };
+
+    console.log(`You: ${humanScore}`);
+    console.log(`Computer: ${computerScore}`);
 }
-main.appendChild(scoreboard);
-main.appendChild(roundResults);
 
-rockBtn.addEventListener('click', () => {
+function resolveGame() {
+
     roundResults.remove();
     scoreboard.remove();
-})
+    rockBtn.remove();
+    paperBtn.remove();
+    scissorsBtn.remove();
+    if (humanScore === 5) {
+        winnerMsg.textContent = "That's 5! Humanity holds out against the looming computer threat!";
+    } else if (computerScore === 5) {
+        winnerMsg.textContent = "Oh no! The computer got to 5 wins before you did. Looks like humanity's days are numbered.";
+    }
+    main.appendChild(winnerMsg);
+    main.appendChild(restartBtn);
+}
 
-paperBtn.addEventListener('click', () => {
-    roundResults.remove();
-    scoreboard.remove();
-})
-
-scissorsBtn.addEventListener('click', () => {
-    roundResults.remove();
-    scoreboard.remove();
-})
-
-console.log(`You: ${humanScore}`);
-console.log(`Computer: ${computerScore}`);
+function restartGame() {
+    
 }
 
 //     if (humanScore > computerScore) {
@@ -148,7 +141,7 @@ console.log(`Computer: ${computerScore}`);
 // // }
 
 //=======CONSOLE DEBUGGING AND TESTING=======
-console.log("++++SCOREBOARD++++");
+// console.log("++++SCOREBOARD++++");
 // console.log(`Comp: ${getComputerChoice()}`);
 // console.log(`Human: ${getHumanChoice()}`);
 // console.log(humanScore);

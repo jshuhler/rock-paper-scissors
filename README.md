@@ -92,3 +92,12 @@ I'm using this README as a scratch pad for myself.
 - add image to buttons
 -correct spacing in `main` - the buttons should be alone in the top 1/3rd of the section, the scoring updates should be in the bottom 2/3rds (?)
 - make the scoreboard look nicer
+- update the wording on the `roundResults` messages so it's clear what you picked or at least more clear what the computer picked
+- maybe look into dynamically displaying the humanChoice and the computerCHoice so you can see what both players picked each round
+
+## DEC 7 work
+- Splitting things into separate functions that call each other down the chain if certain conditions are met.
+- Moving the element creation and variable declaration out of the top of the `playRound` function has broken the messages updating after the first round for some reason, need to figure out why. 
+    - it's because the if statement that the appendChild methods are in is not part of the if loop for determining the winner of each contest between the players, need to figure out how to get that to run each time. another function?
+### Still need to figure out:
+- How to return to the original page when the Play Again button is clicked - is there a method to remove everything and go back to the original DOM tree? Look into that 
