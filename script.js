@@ -71,19 +71,19 @@ function playRound(humanChoice, computerChoice) {
         roundCount++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Both Rocks crack into each other. You tie this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "paper") {
         roundCount++;
         computerScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "The Computer's Paper smothers your Rock. You lose this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
         roundCount++;
         humanScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Your Rock smashes the Computer's Scissors. You win this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     
     //PAPER OPTIONS
     } else if (humanChoice === "paper" && computerChoice === "rock") {
@@ -91,18 +91,18 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Your Paper smothers the Computer's Rock. You win this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "paper") {
         roundCount++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Both pieces of Paper just kind of lay there. You tie this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
         roundCount++;
         computerScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "The Computer's Scissors shred your Paper. You lose this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     
     //SCISSORS OPTIONS
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
@@ -110,18 +110,18 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "The Computer's Rock smashes your Scissors. You lose this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
         roundCount++;
         humanScore++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Your Scissors shred the Computer's Paper. You win this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
         roundCount++;
         roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Sparks fly as both Scissors clash. You tie this round!";
-        scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
+        scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`
     }    
 
     //CHECKING FOR A WINNER
