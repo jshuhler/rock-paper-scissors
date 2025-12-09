@@ -41,9 +41,14 @@ scissorsBtn.addEventListener('click',() => {
 // =======INITIAL SCORING=======
 let humanScore = 0;
 let computerScore = 0;
+let roundCount = 0;
 
 // =======DEFINING & CREATING ELEMENTS=======
 const main = document.querySelector(".main");
+const body = document.querySelector(".body");
+
+let roundCounter = document.createElement("roundCountDiv");
+roundCounter.style.display = 'flex';
 
 let roundResults = document.createElement("roundResultsDiv");
 roundResults.style.display = 'flex';
@@ -58,44 +63,62 @@ winnerMsg.style.textAlign = 'center';
 let restartBtn = document.createElement("button");
 restartBtn.textContent = "Play Again";
 
-// =======PLAYING A ROUND=======
+// =======PLAYING GAME FUNCTIONS=======
 function playRound(humanChoice, computerChoice) {
     //ROCK OPTIONS
     if (humanChoice === "rock" && computerChoice === "rock") {
+        roundCount++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Rock matches Rock, you tie this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "paper") {
+        roundCount++;
         computerScore++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Paper beats Rock, you lose this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
+        roundCount++;
         humanScore++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Rock beats Scissors, you win this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     
         //PAPER OPTIONS
     } else if (humanChoice === "paper" && computerChoice === "rock") {
+        roundCount++;
         humanScore++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Paper beats Rock, you win this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "paper") {
+        roundCount++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Paper matches Paper, you tie this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
+        roundCount++;
         computerScore++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Scissors beat Paper, you lose this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     
         //SCISSORS OPTIONS
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
+        roundCount++;
         computerScore++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Rock beats Scissors, you lose this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        roundCount++;
         humanScore++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Scissors beat Paper, you win this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     } else if (humanChoice === "scissors" && computerChoice === "scissors") {
+        roundCount++;
+        roundCounter.textContent = `Round: ${roundCount}`;
         roundResults.textContent = "Scissors match Scissors, you tie this round!";
         scoreboard.textContent = `Human: ${humanScore} | Computer: ${computerScore}`
     }    
@@ -103,47 +126,37 @@ function playRound(humanChoice, computerChoice) {
     if (humanScore === 5 || computerScore === 5) {
         resolveGame();
     } else {
+        main.appendChild(roundCounter);
         main.appendChild(scoreboard);
         main.appendChild(roundResults);
     };
 
-    console.log(`You: ${humanScore}`);
-    console.log(`Computer: ${computerScore}`);
+    // FOR TESTING
+    console.log(`roundCount: ${roundCount}`);
+    console.log(`humanScore: ${humanScore}`);
+    console.log(`computerScore: ${computerScore}`);
+    console.log(`--------`);
 }
 
 function resolveGame() {
-
+    roundCounter.remove();
     roundResults.remove();
     scoreboard.remove();
     rockBtn.remove();
     paperBtn.remove();
     scissorsBtn.remove();
     if (humanScore === 5) {
-        winnerMsg.textContent = "That's 5! Humanity holds out against the looming computer threat!";
+        winnerMsg.textContent = `Congratulations! You've won ${humanScore}-${computerScore} after ${roundCount} rounds!`;
     } else if (computerScore === 5) {
-        winnerMsg.textContent = "Oh no! The computer got to 5 wins before you did. Looks like humanity's days are numbered.";
+        winnerMsg.textContent = `Oh no! You've lost ${computerScore}-${humanScore} in ${roundCount} rounds. Better luck next time!`;
     }
     main.appendChild(winnerMsg);
     main.appendChild(restartBtn);
+    restartBtn.addEventListener('click', () => {
+        restartGame();
+    })
 }
 
 function restartGame() {
-    
+    window.location.reload();
 }
-
-//     if (humanScore > computerScore) {
-//         console.log(`Congratulations! You've won ${humanScore}-${computerScore}.`);
-//     } else if (humanScore < computerScore) {
-//         console.log(`Oh no! You've lost this round ${computerScore}-${humanScore}.`);
-//     } else if (humanScore === computerScore) {
-//         console.log(`So close! You've tied this round ${humanScore}-${computerScore}.`)
-//     }
-// // }
-
-//=======CONSOLE DEBUGGING AND TESTING=======
-// console.log("++++SCOREBOARD++++");
-// console.log(`Comp: ${getComputerChoice()}`);
-// console.log(`Human: ${getHumanChoice()}`);
-// console.log(humanScore);
-// console.log(computerScore);
-// console.log(playGame());
