@@ -21,21 +21,21 @@ rockBtn.addEventListener('click',() => {
     let humanChoice = "rock";
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
-    return playRound;
+    // return playRound;
 })
 
 paperBtn.addEventListener('click',() => {
     let humanChoice = "paper";
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
-    return playRound;
+    // return playRound;
 })
 
 scissorsBtn.addEventListener('click',() => {
     let humanChoice = "scissors";
     let computerChoice = getComputerChoice();
     playRound(humanChoice, computerChoice);
-    return playRound;
+    // return playRound;
 })
 
 // =======INITIAL SCORING=======
