@@ -46,16 +46,20 @@ let roundCount = 0;
 // =======DEFINING & CREATING ELEMENTS=======
 const main = document.querySelector(".main");
 
-let roundCounter = document.createElement("roundCountDiv");
+let roundCounter = document.createElement("div");
+roundCounter.classList = "round-count-div";
 roundCounter.style.display = 'flex';
 
-let roundResults = document.createElement("roundResultsDiv");
+let roundResults = document.createElement("div");
+roundResults.classList = "round-results-div";
 roundResults.style.display = 'flex';
 
-let scoreboard = document.createElement("scoreboard");
+let scoreboard = document.createElement("div");
+scoreboard.classList = "scoreboard";
 scoreboard.style.display = 'flex';
 
-let winnerMsg = document.createElement("winnerMsg");
+let winnerMsg = document.createElement("div");
+winnerMsg.classList = "winner-msg";
 winnerMsg.style.display = 'flex';
 winnerMsg.style.textAlign = 'center';
 
