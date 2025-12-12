@@ -47,11 +47,11 @@ let roundCount = 0;
 const main = document.querySelector(".main");
 
 let roundCounter = document.createElement("div");
-roundCounter.classList = "round-count-div";
+roundCounter.classList = "round-count";
 roundCounter.style.display = 'flex';
 
 let roundResults = document.createElement("div");
-roundResults.classList = "round-results-div";
+roundResults.classList = "round-results";
 roundResults.style.display = 'flex';
 
 let scoreboard = document.createElement("div");
